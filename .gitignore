@@ -269,3 +269,29 @@ __pycache__/
 *.xsd.cs
 
 
+QuestionApi/Dal/Migrations/20240313202848_InitialCreate.cs
+QuestionApi/Dal/Migrations/20240313202848_InitialCreate.Designer.cs
+QuestionApi/Dal/Migrations/20240316214239_update.cs
+QuestionApi/Dal/Migrations/20240316214239_update.Designer.cs
+QuestionApi/Dal/Migrations/20240316215235_update2.cs
+QuestionApi/Dal/Migrations/20240316215235_update2.Designer.cs
+QuestionApi/Dal/Migrations/20240318170723_update3.cs
+QuestionApi/Dal/Migrations/20240318170723_update3.Designer.cs
+QuestionApi/Dal/Migrations/20240318200719_update4.cs
+QuestionApi/Dal/Migrations/20240319130157_update5.cs
+QuestionApi/Dal/Migrations/20240319130157_update5.Designer.cs
+QuestionApi/Dal/Migrations/20240319131415_update6.cs
+QuestionApi/Dal/Migrations/20240319131415_update6.Designer.cs
+QuestionApi/Dal/Migrations/20240319131608_update7.cs
+QuestionApi/Dal/Migrations/20240319131608_update7.Designer.cs
+QuestionApi/Dal/Migrations/20240319132432_update8.cs
+QuestionApi/Dal/Migrations/20240319132432_update8.Designer.cs
+QuestionApi/Dal/Migrations/20240319133650_update9.cs
+QuestionApi/Dal/Migrations/20240319133650_update9.Designer.cs
+QuestionApi/Dal/Migrations/20240319134124_update10.cs
+QuestionApi/Dal/Migrations/20240319134124_update10.Designer.cs
+QuestionApi/Dal/Migrations/20240319135947_update11.cs
+QuestionApi/Dal/Migrations/20240319135947_update11.Designer.cs
+QuestionApi/Dal/Migrations/20240325200715_update12.cs
+QuestionApi/Dal/Migrations/20240325200715_update12.Designer.cs
+QuestionApi/Dal/Migrations/QuestionDbContextModelSnapshot.cs
