@@ -11,6 +11,11 @@ public record AnswerViewModel
     public required string AuthorName { get; init; }
 
     /// <summary>
+    /// Дата создания
+    /// </summary>
+    public required DateTime CreationTime { get; init; }
+
+    /// <summary>
     /// Текст ответа
     /// </summary>
     public required string Text { get; init; }

@@ -15,6 +15,11 @@ public record class AnswerDal : BaseEntityDal<Guid>
     public required string Text { get; init; }
 
     /// <summary>
+    /// Дата создания
+    /// </summary>
+    public required DateTime CreationTime { get; init; }
+
+    /// <summary>
     /// Автор ответа
     /// </summary>
     public virtual required AuthorDal Author { get; init; }
