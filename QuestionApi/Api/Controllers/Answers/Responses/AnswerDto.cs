@@ -27,6 +27,11 @@ public record AnswerDto
     /// </summary>
     public required Guid AuthorId { get; init; }
 
+    /// <summary>
+    /// Время создания
+    /// </summary>
+    public required DateTime CreationTime { get; init; }
+
     public static explicit operator AnswerDto(AnswerViewModel viewModel)
     {
         return new AnswerDto()
@@ -34,7 +39,8 @@ public record AnswerDto
             AuthorId = viewModel.AuthorId,
             Id = viewModel.Id,
             Text = viewModel.Text,
-            AuthorName = viewModel.AuthorName
+            AuthorName = viewModel.AuthorName,
+            CreationTime = viewModel.CreationTime,
         };
     }
 }

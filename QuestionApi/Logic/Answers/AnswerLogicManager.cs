@@ -44,7 +44,8 @@ internal class AnswerLogicManager : IAnswerLogicManager
         {
             Author = await _authorRepository.GetInfoAsync(answer.AuthorId),
             Question = question,
-            Text = answer.Text
+            Text = answer.Text,
+            CreationTime = DateTime.UtcNow,
         };
         await _answerRepository.CreateAsync(dal);
         return dal.Id;
@@ -61,6 +62,8 @@ internal class AnswerLogicManager : IAnswerLogicManager
             AuthorId = dal.Author.Id,
             Text = dal.Text,
             AuthorName = dal.Author.Name,
+            CreationTime = dal.CreationTime,
+
         }).ToArray();
     }
 
