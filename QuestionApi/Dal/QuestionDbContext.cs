@@ -11,27 +11,18 @@ namespace Dal;
 
 public class QuestionDbContext : DbContext
 {
-    private const string ConnectionName = "DefaultConnection";
-
-    public QuestionDbContext() : base()
+    public QuestionDbContext(DbContextOptions<QuestionDbContext> options) : base(options)
     {
-        AppSettings = new ConfigurationBuilder()
-        .Add(new JsonConfigurationSource { Path = "datasettings.json", ReloadOnChange = true })
-        .Build();
+        Database.EnsureCreated();
     }
-
     public DbSet<AuthorDal> Authors { get; set; }
     public DbSet<QuestionDal> Questions { get; set; }
     public DbSet<AnswerDal> Answers { get; set; }
     public DbSet<TagDal> Tags { get; set; }
     public DbSet<EditDal> Edits { get; init; } 
 
-    public IConfigurationRoot AppSettings { get; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var connectionString = AppSettings.GetConnectionString(ConnectionName);
-        optionsBuilder.UseNpgsql(connectionString);
         optionsBuilder.UseLazyLoadingProxies();
     }
 }

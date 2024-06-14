@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalTest", "DalTest\DalTest.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "..\Libs\Core\Core.csproj", "{A202CBF7-5E0E-44B7-A4F8-BBFBC044CAA7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{8AA556DB-79D8-4BBB-B20D-F27C8D791548}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C5CB82B4-A4F6-44B2-A218-B6A845BF83E9} = {3DBEE5CC-A74E-400E-BBC5-CFA60747C165}
+		{A202CBF7-5E0E-44B7-A4F8-BBFBC044CAA7} = {8AA556DB-79D8-4BBB-B20D-F27C8D791548}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF4790BC-FDB5-4468-9B20-61CE3B4529CB}

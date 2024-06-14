@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost; Database=QuestionBase; Username=postgres; Password=\" \""
-  }
-}
