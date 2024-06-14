@@ -18,7 +18,7 @@ namespace DalTest
         public async Task CheckCreateAuthor()
         {
             var services = new ServiceCollection();
-            DalStartup.TryAddDal(services);
+            DalStartup.TryAddDal(services, "");
             var provider = new DefaultServiceProviderFactory().CreateServiceProvider(services);
             provider.CreateScope();
             var context = provider.GetService<QuestionDbContext>();

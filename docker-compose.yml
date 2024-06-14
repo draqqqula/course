@@ -1,0 +1,33 @@
+version: "3.9"
+networks:
+  question-api:
+    driver: bridge
+services:
+  app: 
+    container_name: question
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    networks:
+      - question-api
+    depends_on:
+      - postgres_db
+  postgres_db:
+    container_name: postgres-questions
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: QuestionBase
+    ports:
+      - "5432:5432"
+    networks:
+      - question-api
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:

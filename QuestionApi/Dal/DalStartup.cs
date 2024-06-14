@@ -8,6 +8,7 @@ using Dal.Questions;
 using Dal.Questions.Interfaces;
 using Dal.Tags;
 using Dal.Tags.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -15,9 +16,9 @@ namespace Dal;
 
 public static class DalStartup
 {
-    public static IServiceCollection TryAddDal(this IServiceCollection serviceCollection)
+    public static IServiceCollection TryAddDal(this IServiceCollection serviceCollection, string connectionString)
     {
-        serviceCollection.TryAddScoped<QuestionDbContext>();
+        serviceCollection.AddDbContext<QuestionDbContext>(opt => opt.UseNpgsql(connectionString));
         serviceCollection.TryAddScoped<IAnswerRepository, AnswerRepository>();
         serviceCollection.TryAddScoped<IAuthorRepository, AuthorRepository>();
         serviceCollection.TryAddScoped<IQuestionRepository, QuestionRepository>();

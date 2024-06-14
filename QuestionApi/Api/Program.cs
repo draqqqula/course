@@ -1,5 +1,6 @@
 using Dal;
 using Logic;
+using Microsoft.Extensions.Configuration.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.TryAddDal();
 builder.Services.TryAddLogic();
+builder.Configuration.AddJsonFile("datasettings.json");
+builder.Services.TryAddDal(builder.Configuration.GetConnectionString("Db"));
 
 var app = builder.Build();
 
