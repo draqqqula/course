@@ -1,6 +1,7 @@
 using Dal;
 using Logic;
 using Microsoft.Extensions.Configuration.Json;
+using MyProfileConnectionLib;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-
+builder.Services.AddHttpClient();
+builder.Services.TryAddProfileConnection();
 builder.Services.TryAddLogic();
 builder.Configuration.AddJsonFile("datasettings.json");
 builder.Services.TryAddDal(builder.Configuration.GetConnectionString("Db"));

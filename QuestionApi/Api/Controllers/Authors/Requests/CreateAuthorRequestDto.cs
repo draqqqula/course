@@ -5,6 +5,6 @@
     /// </summary>
     public record CreateAuthorRequestDto
     {
-        public required string Name { get; init; }
+        public required Guid ProfileId { get; init; }
     }
 }

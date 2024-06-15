@@ -30,7 +30,7 @@ public class AuthorController : ControllerBase
         var id = await _authorLogicManager.CreateAsync(
             new AuthorInputModel() 
             { 
-                AuthorName = dto.Name 
+                ProfileId = dto.ProfileId 
             });
         return Ok(new CreateAuthorResponseDto { Id = id });
     }
