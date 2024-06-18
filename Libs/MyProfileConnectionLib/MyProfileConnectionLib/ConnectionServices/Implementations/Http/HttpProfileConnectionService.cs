@@ -11,13 +11,13 @@ using MyProfileConnectionLib.ConnectionServices.Interfaces;
 using System;
 using System.Net.Http.Json;
 
-namespace MyProfileConnectionLib.ConnectionServices;
+namespace MyProfileConnectionLib.ConnectionServices.Implementations.Http;
 
-internal class ProfileConnectionService : IProfileConnectionService
+internal class HttpProfileConnectionService : IProfileConnectionService
 {
     enum RestApiAvailableMethod
     {
-        Post, 
+        Post,
         Put
     }
 
@@ -25,11 +25,11 @@ internal class ProfileConnectionService : IProfileConnectionService
 
     private Uri? CreateUserUri { get; set; }
     private Uri? GetProfileUri { get; set; }
-    private Uri? IncreaceAskedUri {  get; set; }
+    private Uri? IncreaceAskedUri { get; set; }
     private Uri? IncreaceSolvedUri { get; set; }
     private Uri? IncreaceAnsweredUri { get; set; }
 
-    public ProfileConnectionService(IConfiguration configuration, IServiceProvider serviceProvider)
+    public HttpProfileConnectionService(IConfiguration configuration, IServiceProvider serviceProvider)
     {
         _httpClientFactory = serviceProvider.GetRequiredService<IHttpClientFactory>();
         IncreaceAskedUri = configuration.GetValue<Uri>(nameof(IncreaceAskedUri));
@@ -72,9 +72,9 @@ internal class ProfileConnectionService : IProfileConnectionService
 
     public async Task<IncreaceAnsweredCounterResponse> IncreaceAnsweredCounter(IncreaceAnsweredCounterRequest request)
     {
-        return new IncreaceAnsweredCounterResponse() 
-        { 
-            Success = await IncreaceCounter(request, IncreaceAnsweredUri) 
+        return new IncreaceAnsweredCounterResponse()
+        {
+            Success = await IncreaceCounter(request, IncreaceAnsweredUri)
         };
     }
 

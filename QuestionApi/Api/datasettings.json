@@ -1,5 +1,5 @@
 {
   "ConnectionStrings": {
-    "Db": "Host=postgres-questions; Database=QuestionBase; Username=postgres; Password=123"
+    "Db": "Host=localhost; Database=QuestionBase; Username=postgres; Password=123"
   }
 }
