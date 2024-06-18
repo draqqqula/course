@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "..\Libs\Core\Core.c
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{8AA556DB-79D8-4BBB-B20D-F27C8D791548}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProfileConnectionLib", "..\Libs\MyProfileConnectionLib\MyProfileConnectionLib\MyProfileConnectionLib.csproj", "{CF30B188-0760-42BA-802C-9C985F11022B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{A202CBF7-5E0E-44B7-A4F8-BBFBC044CAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A202CBF7-5E0E-44B7-A4F8-BBFBC044CAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A202CBF7-5E0E-44B7-A4F8-BBFBC044CAA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF30B188-0760-42BA-802C-9C985F11022B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF30B188-0760-42BA-802C-9C985F11022B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF30B188-0760-42BA-802C-9C985F11022B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF30B188-0760-42BA-802C-9C985F11022B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C5CB82B4-A4F6-44B2-A218-B6A845BF83E9} = {3DBEE5CC-A74E-400E-BBC5-CFA60747C165}
 		{A202CBF7-5E0E-44B7-A4F8-BBFBC044CAA7} = {8AA556DB-79D8-4BBB-B20D-F27C8D791548}
+		{CF30B188-0760-42BA-802C-9C985F11022B} = {8AA556DB-79D8-4BBB-B20D-F27C8D791548}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF4790BC-FDB5-4468-9B20-61CE3B4529CB}
