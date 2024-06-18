@@ -6,6 +6,10 @@ using Dal.Authors.Interfaces;
 using Dal.Questions.Interfaces;
 using Dal.Questions.Models;
 using Logic.Answers.ViewModels;
+using MyProfileConnectionLib.ConnectionServices.Interfaces;
+using MyProfileConnectionLib.ConnectionServices.DtoModels.IncreaceAnsweredCounter;
+using MyProfileConnectionLib.ConnectionServices.DtoModels.IncreaceAskedCounter;
+using MyProfileConnectionLib.ConnectionServices.DtoModels.IncreaceSolvedCounter;
 
 namespace Logic.Answers;
 
@@ -15,14 +19,17 @@ internal class AnswerLogicManager : IAnswerLogicManager
     private readonly IAnswerRepository _answerRepository;
     private readonly IAuthorRepository _authorRepository;
     private readonly IQuestionRepository _questionRepository;
+    private readonly IProfileConnectionService _profileConnection;
     public AnswerLogicManager(
         IAnswerRepository answerRepository, 
         IAuthorRepository authorRepository,
-        IQuestionRepository questionRepository)
+        IQuestionRepository questionRepository,
+        IProfileConnectionService profileConnection)
     {
         _answerRepository = answerRepository;
         _authorRepository = authorRepository;
         _questionRepository = questionRepository;
+        _profileConnection = profileConnection;
     }
 
     /// <summary>
@@ -48,6 +55,11 @@ internal class AnswerLogicManager : IAnswerLogicManager
             CreationTime = DateTime.UtcNow,
         };
         await _answerRepository.CreateAsync(dal);
+        await _profileConnection.IncreaceAnsweredCounter(new IncreaceAnsweredCounterRequest()
+        {
+            Id = answer.AuthorId,
+            Amount = 1
+        });
         return dal.Id;
     }
 

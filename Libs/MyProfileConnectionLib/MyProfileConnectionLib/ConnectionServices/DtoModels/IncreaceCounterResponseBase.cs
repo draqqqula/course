@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyProfileConnectionLib.ConnectionServices.DtoModels;
+
+public abstract record IncreaceCounterResponseBase
+{
+    public required bool Success { get; init; }
+}

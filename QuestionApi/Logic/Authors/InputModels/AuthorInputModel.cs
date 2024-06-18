@@ -8,5 +8,5 @@ public record AuthorInputModel
     /// <summary>
     /// Имя автора
     /// </summary>
-    public required string AuthorName { get; init; }
+    public required Guid ProfileId { get; init; }
 }

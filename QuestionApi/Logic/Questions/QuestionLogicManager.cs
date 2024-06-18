@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Logic.Questions.ViewModels;
 using Dal.Edits.Models;
 using Dal.Edits.Interfaces;
+using MyProfileConnectionLib.ConnectionServices.Interfaces;
+using MyProfileConnectionLib.ConnectionServices.DtoModels.IncreaceAskedCounter;
 
 namespace Logic.Questions;
 
@@ -20,17 +22,20 @@ internal class QuestionLogicManager : IQuestionLogicManager
     private readonly ITagRepository _tagRepository;
     private readonly IAuthorRepository _authorRepository;
     private readonly IEditRepository _editRepository;
+    private readonly IProfileConnectionService _profileConnection;
 
     public QuestionLogicManager(
         IQuestionRepository questionRepository, 
         ITagRepository tagRepository, 
         IAuthorRepository authorRepository,
-        IEditRepository editRepository)
+        IEditRepository editRepository,
+        IProfileConnectionService profileConnection)
     {
         _questionRepository = questionRepository;
         _tagRepository = tagRepository;
         _authorRepository = authorRepository;
         _editRepository = editRepository;
+        _profileConnection = profileConnection;
     }
 
     /// <inheritdoc/>
@@ -49,6 +54,11 @@ internal class QuestionLogicManager : IQuestionLogicManager
         {
             tag.Questions.Add(questionDal);
         }
+        await _profileConnection.IncreaceAskedCounter(new IncreaceAskedCounterRequest()
+        {
+            Amount = 1,
+            Id = question.AuthorId,
+        });
         return await _questionRepository.CreateAsync(questionDal);
     }
 
